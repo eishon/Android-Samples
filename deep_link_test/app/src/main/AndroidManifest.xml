@@ -9,26 +9,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DeepLinkTest">
+        <activity android:name=".SecondActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.eishon.com"
+                    android:scheme="https"
+                    android:pathPrefix="/second"/>
+                <data
+                    android:host="www.eishon.com"
+                    android:scheme="http"
+                    android:pathPrefix="/second"/>
+                <data
+                    android:host="test"
+                    android:scheme="eishon"
+                    android:pathPrefix="/second"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="https"
-                    android:host="www.eishon.com" />
-
-                <data android:scheme="http"
-                    android:host="www.eishon.com" />
-
-                <data android:scheme="eishon"
-                    android:host="test" />
+                <data
+                    android:host="www.eishon.com"
+                    android:scheme="https"
+                    android:pathPrefix="/main"/>
+                <data
+                    android:host="www.eishon.com"
+                    android:scheme="http"
+                    android:pathPrefix="/main" />
+                <data
+                    android:host="test"
+                    android:scheme="eishon"
+                    android:pathPrefix="/main"/>
             </intent-filter>
         </activity>
     </application>
