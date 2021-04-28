@@ -26,6 +26,9 @@
 
                 <data android:scheme="http"
                     android:host="www.eishon.com" />
+
+                <data android:scheme="eishon"
+                    android:host="test" />
             </intent-filter>
         </activity>
     </application>
