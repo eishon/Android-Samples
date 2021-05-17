@@ -35,7 +35,7 @@
                 android:id="@+id/customAlertDialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Custom Alert Dialog" />
+                android:text="Custom Dialog" />
 
             <Button
                 android:id="@+id/simpleSnackbar"

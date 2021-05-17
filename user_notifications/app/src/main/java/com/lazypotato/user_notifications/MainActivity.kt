@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.lazypotato.user_notifications.databinding.ActivityMainBinding
+import com.lazypotato.user_notifications.utils.DialogUtil
 import com.lazypotato.user_notifications.utils.SnackbarUtil
 import com.lazypotato.user_notifications.utils.ToastUtil
 
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         setupToast()
 
         setupSnackbar()
+
+        setupDialog()
     }
 
     private fun setupToast() {
@@ -42,6 +45,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.customSnackbar.setOnClickListener {
             SnackbarUtil.displayCustom(layoutInflater, binding.coordinatorLayout, "This is a Custom Snackbar")
+        }
+    }
+
+    private fun setupDialog(){
+        binding.simpleAlertDialog.setOnClickListener {
+            DialogUtil.displayAlertDialog(this, "This is Simple Alert Dialog")
+        }
+
+        binding.customAlertDialog.setOnClickListener {
+            DialogUtil.displayCustomDialog(this, "This is Custom Dialog")
         }
     }
 }
