@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
             SnackbarUtil.displayWithButton(binding.coordinatorLayout, "This is a Simple Snackbar with Action")
         }
 
-        binding.customToast.setOnClickListener {
-            ToastUtil.displayCustomToast(applicationContext, "This is a Custom Toast")
+        binding.customSnackbar.setOnClickListener {
+            SnackbarUtil.displayCustom(layoutInflater, binding.coordinatorLayout, "This is a Custom Snackbar")
         }
     }
 }

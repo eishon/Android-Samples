@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="HardcodedText">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/design_default_color_primary_dark"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@drawable/ic_launcher_foreground"
+                android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/imageView"
+                android:text="Info"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/imageView"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/imageView"
+                android:text="Message"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/imageView" />
+
+            <!--this view separates between button and the message-->
+            <View
+                android:layout_width="2dp"
+                android:layout_height="45dp"
+                android:layout_toStartOf="@id/button"
+                android:background="@android:color/white"
+                android:layout_toLeftOf="@id/button" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="GO"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

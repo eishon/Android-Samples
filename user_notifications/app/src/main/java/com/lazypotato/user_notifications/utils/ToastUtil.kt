@@ -20,8 +20,8 @@ class ToastUtil {
             msg: String,
         ) {
             val toast: Toast = Toast.makeText(context, msg, Toast.LENGTH_LONG)
-            val view: View =
-                LayoutInflater.from(context).inflate(R.layout.layout_custom_toast, null)
+            val view: View = LayoutInflater.from(context)
+                .inflate(R.layout.layout_custom_toast, null)
             toast.setView(view)
             val text = view.findViewById<TextView>(R.id.toast_txt_vw)
             text.setText(msg)
