@@ -62,6 +62,12 @@
                 android:text="Simple Notification" />
 
             <Button
+                android:id="@+id/expandedNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expanded Notification" />
+
+            <Button
                 android:id="@+id/customNotification"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
