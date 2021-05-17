@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/simpleToast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simple Toast" />
+
+        <Button
+            android:id="@+id/customToast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom Toast" />
+
+        <Button
+            android:id="@+id/simpleAlertDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simple Alert Dialog" />
+
+        <Button
+            android:id="@+id/customAlertDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom Alert Dialog" />
+
+        <Button
+            android:id="@+id/simpleSnackbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simple Snackbar" />
+
+        <Button
+            android:id="@+id/customSnackbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom Snackbar" />
+
+        <Button
+            android:id="@+id/simpleNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simple Notification" />
+
+        <Button
+            android:id="@+id/customNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom Notification" />
+    </LinearLayout>
+</layout>
