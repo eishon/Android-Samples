@@ -2,8 +2,8 @@ package com.lazypotato.ndkpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import com.lazypotato.ndkpractice.databinding.ActivityMainBinding
+import com.lazypotato.ndkpractice.kotlin.Calculator
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,13 +16,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Example of a call to a native method
-        binding.sampleText.text = stringFromJNI()
+        binding.sampleText.text = Calculator.add(5,3).toString()
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
     external fun stringFromJNI(): String
 
     companion object {
