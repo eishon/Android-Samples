@@ -1,0 +1,78 @@
+ext.versionPrimary = 0
+ext.versionSecondary = 0
+ext.versionPatch = 0
+
+private Integer generateVersionCode() {
+    return ext.versionMajor * 10000 + ext.versionMinor * 100 + ext.versionPatch
+}
+
+private String generateVersionName() {
+    String versionName = "${ext.versionMajor}.${ext.versionMinor}.${ext.versionPatch}"
+    return versionName
+}
+
+android {
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        applicationId "com.lazypotato.volleysampleapp"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions "target_role"
+    productFlavors {
+        admin {
+            applicationId "com.lazypotato.volleysampleapp.admin"
+            versionCode 1 + android.defaultConfig.versionCode
+            //versionName "1.0"
+            dimension "target_role"
+            versionNameSuffix "." + versionCode
+            //signingConfig signingConfigs.admin
+
+            buildConfigField "String", "BASE_URL_RELEASE", API_BASE_URL_RELEASE
+            buildConfigField "String", "BASE_URL_DEV", API_BASE_URL_DEV
+            buildConfigField "String", "TOKEN", API_TOKEN
+
+            buildConfigField "String", "TARGET_ROLE", ADMIN_ROLE
+
+            resValue "string", "app_name", "Admin App"
+        }
+
+        manager {
+            applicationId "com.lazypotato.volleysampleapp.manager"
+            versionCode android.defaultConfig.versionCode
+            //versionName "1.0"
+            dimension "target_role"
+            versionNameSuffix "." + versionCode
+            //signingConfig signingConfigs.manager
+
+            resValue "string", "app_name", "Manager App"
+
+            buildConfigField "String", "BASE_URL_RELEASE", API_BASE_URL_RELEASE
+            buildConfigField "String", "BASE_URL_DEV", API_BASE_URL_DEV
+            buildConfigField "String", "TOKEN", API_TOKEN
+
+            buildConfigField "String", "TARGET_ROLE", MANAGER_ROLE
+        }
+
+        user {
+            applicationId "com.lazypotato.volleysampleapp.user"
+            versionCode android.defaultConfig.versionCode
+            //versionName "1.0"
+            dimension "target_role"
+            versionNameSuffix "." + versionCode
+            //signingConfig signingConfigs.user
+
+            buildConfigField "String", "BASE_URL_RELEASE", API_BASE_URL_RELEASE
+            buildConfigField "String", "BASE_URL_DEV", API_BASE_URL_DEV
+            buildConfigField "String", "TOKEN", API_TOKEN
+
+            buildConfigField "String", "TARGET_ROLE", USER_ROLE
+
+            resValue "string", "app_name", "User App"
+        }
+    }
+}
