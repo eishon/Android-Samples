@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VolleySampleApp">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.CommentActivity"></activity>
+        <activity
+            android:name=".ui.UserActivity"
+            android:label="@string/title_activity_user" />
+        <activity android:name=".ui.PostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

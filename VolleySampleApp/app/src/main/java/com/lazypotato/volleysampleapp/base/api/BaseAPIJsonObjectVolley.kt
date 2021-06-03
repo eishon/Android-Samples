@@ -8,7 +8,7 @@ import com.lazypotato.volleysampleapp.data.network.util.VolleySingleton.Companio
 import com.lazypotato.volleysampleapp.util.LogUtil.debug
 import org.json.JSONObject
 
-abstract class BaseAPIVolley {
+abstract class BaseAPIJsonObjectVolley {
     var apiRequest: APIRequest? = null
         get() {
             if (field == null) {
@@ -34,7 +34,7 @@ abstract class BaseAPIVolley {
 
     protected abstract fun intAPIRequest(): APIRequest?
     protected abstract fun showProgress(flag: Boolean)
-    protected abstract fun onSuccess(response: JSONObject?)
+    protected abstract fun onSuccess(response: JSONObject)
     protected abstract fun onError(error: VolleyError?)
 
     fun processRequest() {

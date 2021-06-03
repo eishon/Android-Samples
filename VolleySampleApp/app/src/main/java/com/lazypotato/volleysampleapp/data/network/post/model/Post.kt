@@ -1,4 +1,4 @@
-package com.lazypotato.volleysampleapp.data.network.post.get
+package com.lazypotato.volleysampleapp.data.network.post.model
 
 import java.io.Serializable
 

@@ -11,11 +11,21 @@ object NetworkConstants {
 
     @JvmStatic
     fun postGET(): String {
-        return "${BASE_URL}posts"
+        return "${BASE_URL}/posts"
     }
 
     @JvmStatic
     fun postPOST(): String {
-        return "${BASE_URL}posts"
+        return "${BASE_URL}/posts"
+    }
+
+    @JvmStatic
+    fun userGET(): String {
+        return "${BASE_URL}/users"
+    }
+
+    @JvmStatic
+    fun commentsGET(postId: Int): String {
+        return "${BASE_URL}/comments?postId=$postId"
     }
 }

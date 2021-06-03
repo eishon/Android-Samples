@@ -12,4 +12,10 @@
     <string name="resource_not_found">Resource not found</string>
     <string name="invalid_user_id">Invalid User ID</string>
     <string name="internal_server_error">Internal server error</string>
+
+    <string name="title_activity_user">MainActivity</string>
+
+    <string name="title_user_info">User Info</string>
+    <string name="title_user_album">Album</string>
+    <string name="title_user_todo">ToDo</string>
 </resources>

@@ -1,35 +1,34 @@
-package com.lazypotato.volleysampleapp.data.network.post.get
+package com.lazypotato.volleysampleapp.data.network.comment
 
-import android.app.ProgressDialog
 import android.content.Context
-import com.android.volley.AuthFailureError
-import com.android.volley.Response
 import com.android.volley.VolleyError
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
-import com.lazypotato.volleysampleapp.R
 import com.lazypotato.volleysampleapp.base.api.APIRequest
 import com.lazypotato.volleysampleapp.base.api.APIRequestBuilder
-import com.lazypotato.volleysampleapp.base.api.BaseAPIVolley
+import com.lazypotato.volleysampleapp.base.api.BaseAPIStringVolley
+import com.lazypotato.volleysampleapp.data.network.comment.model.Comment
+import com.lazypotato.volleysampleapp.data.network.post.model.Post
 import com.lazypotato.volleysampleapp.data.network.util.ErrorHandler
 import com.lazypotato.volleysampleapp.data.network.util.NetworkConstants
 import com.lazypotato.volleysampleapp.util.LogUtil
-import com.lazypotato.volleysampleapp.util.PrefManager
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-class GETPost(context: Context, listener: PostResponseListener) : BaseAPIVolley() {
+class GETComments(
+    context: Context,
+    listener: CommentResponseListener,
+    postId: Int
+) : BaseAPIStringVolley() {
 
     private val TAG = "GET POSTS"
 
     private var context: Context = context
-    private var listener: PostResponseListener = listener
+    private var listener: CommentResponseListener = listener
 
-    private val url: String = NetworkConstants.postGET()
+    private val url: String = NetworkConstants.commentsGET(postId)
 
-    fun requestPostsList() {
+    fun requestCommentsList() {
         processRequest();
     }
 
@@ -47,24 +46,25 @@ class GETPost(context: Context, listener: PostResponseListener) : BaseAPIVolley(
         listener.showProgress(flag)
     }
 
-    override fun onSuccess(response: JSONObject?) {
+    override fun onSuccess(response: String?) {
         LogUtil.debug(TAG, response.toString())
 
-        var posts: MutableList<Post> = mutableListOf();
+        val jsonArray = JSONArray(response)
+        var comments: MutableList<Comment> = mutableListOf()
 
-//        for(){
-//            val post = Gson().fromJson(response.toString(), Post::class.java)
-//            posts.add(post)
-//        }
+        for(i in 0 until jsonArray.length()) {
+            var comment = Gson().fromJson(jsonArray[i].toString(), Comment::class.java)
+            comments.add(comment)
+        }
 
-        listener.onPostResponse(posts,200)
+        listener.onCommentResponse(comments,200)
     }
 
     override fun onError(error: VolleyError?) {
         val errorMessage: String = ErrorHandler.handleError(context, error)
 
         if (error != null) {
-            listener.onPostResponse(mutableListOf(), error.networkResponse.statusCode)
+            listener.onCommentResponse(mutableListOf(), error.networkResponse.statusCode)
         }
     }
 
