@@ -2,6 +2,7 @@ package com.lazypotato.volleysampleapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lazypotato.volleysampleapp.data.network.comment.CommentResponseListener
@@ -27,9 +28,22 @@ class CommentActivity : AppCompatActivity(), CommentResponseListener {
 
         getPostId()
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        setRecyclerView()
+
         if(postId != -1) {
-            GETComments(applicationContext, this, postId)
+            GETComments(applicationContext, this, postId).requestCommentsList()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+
+        return true;
     }
 
     private fun getPostId() {
