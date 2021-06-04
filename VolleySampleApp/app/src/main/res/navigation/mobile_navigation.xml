@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_user_info"
-        android:name="com.lazypotato.volleysampleapp.ui.ui.home.HomeFragment"
+        android:name="com.lazypotato.volleysampleapp.ui.user.info.InfoFragment"
         android:label="@string/title_user_info"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_user_info" />
 
     <fragment
         android:id="@+id/navigation_user_album"
-        android:name="com.lazypotato.volleysampleapp.ui.ui.dashboard.DashboardFragment"
+        android:name="com.lazypotato.volleysampleapp.ui.user.album.AlbumFragment"
         android:label="@string/title_user_album"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_user_album" />
 
     <fragment
         android:id="@+id/navigation_user_todo"
-        android:name="com.lazypotato.volleysampleapp.ui.ui.notifications.NotificationsFragment"
+        android:name="com.lazypotato.volleysampleapp.ui.user.todos.ToDosFragment"
         android:label="@string/title_user_todo"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_user_todos" />
 </navigation>

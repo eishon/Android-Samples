@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/navigation_user_info"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@android:drawable/ic_menu_my_calendar"
         android:title="@string/title_user_info" />
 
     <item
         android:id="@+id/navigation_user_album"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@android:drawable/ic_menu_mapmode"
         android:title="@string/title_user_album" />
 
     <item

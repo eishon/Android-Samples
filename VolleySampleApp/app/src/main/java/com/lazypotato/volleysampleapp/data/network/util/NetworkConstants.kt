@@ -28,4 +28,24 @@ object NetworkConstants {
     fun commentsGET(postId: Int): String {
         return "${BASE_URL}/comments?postId=$postId"
     }
+
+    @JvmStatic
+    fun userInfoGET(userId: Int): String {
+        return "${BASE_URL}/users/$userId"
+    }
+
+    @JvmStatic
+    fun albumsGET(userId: Int): String {
+        return "${BASE_URL}/albums?userId=$userId"
+    }
+
+    @JvmStatic
+    fun todosGET(userId: Int): String {
+        return "${BASE_URL}/todos?userId=$userId"
+    }
+
+    @JvmStatic
+    fun photosGET(albumId: Int): String {
+        return "${BASE_URL}/photos?albumId=$albumId"
+    }
 }
