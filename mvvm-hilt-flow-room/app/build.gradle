@@ -13,8 +13,8 @@ android {
 
     defaultConfig {
         applicationId "com.lazypotato.mvvm_hilt_flow_room"
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-// Default dependencies
+    // Default dependencies
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
@@ -74,19 +74,14 @@ dependencies {
 
     // Dagger Hilt
     implementation "com.google.dagger:hilt-android:$hiltVersion"
-    annotationProcessor "com.google.dagger:hilt-compiler:$hiltVersion"
-
-    // For instrumentation tests
-    androidTestImplementation  "com.google.dagger:hilt-android-testing:$hiltVersion"
-    androidTestAnnotationProcessor "com.google.dagger:hilt-compiler:$hiltVersion"
-
-    // For local unit tests
-    testImplementation "com.google.dagger:hilt-android-testing:$hiltVersion"
-    testAnnotationProcessor "com.google.dagger:hilt-compiler:$hiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroidXVersion"
+    kapt "androidx.hilt:hilt-compiler:$hiltAndroidXVersion"
 
     // DataStore
     implementation "androidx.datastore:datastore-preferences:$dataStoreVersion"
 }
+
 
 kapt {
     correctErrorTypes true
