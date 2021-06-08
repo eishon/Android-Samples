@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lazypotato.mvvm_hilt_flow_room.R
 import com.lazypotato.mvvm_hilt_flow_room.data.SortOrder
+import com.lazypotato.mvvm_hilt_flow_room.data.Task
 import com.lazypotato.mvvm_hilt_flow_room.databinding.FragmentTasksBinding
 import com.lazypotato.mvvm_hilt_flow_room.util.setOnQueryTextChanged
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,7 +21,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class TasksFragment: Fragment(R.layout.fragment_tasks) {
+class TasksFragment: Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClickListener {
     private val viewModel: TasksViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class TasksFragment: Fragment(R.layout.fragment_tasks) {
 
         val binding = FragmentTasksBinding.bind(view)
 
-        val tasksAdapter = TasksAdapter()
+        val tasksAdapter = TasksAdapter(this)
 
         binding.apply {
             recyclerViewTasks.apply {
@@ -82,5 +83,13 @@ class TasksFragment: Fragment(R.layout.fragment_tasks) {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onItemClick(task: Task) {
+        viewModel.onTaskSelected(task)
+    }
+
+    override fun onCheckBoxClicked(task: Task, isChecked: Boolean) {
+        viewModel.onTaskCheckedChanged(task, isChecked)
     }
 }
