@@ -18,7 +18,6 @@
                 android:title="Sort by Name" />
 
             <item android:id="@+id/action_sort_by_date"
-                android:icon="@drawable/ic_search"
                 android:title="Sort by Date created" />
         </menu>
 
