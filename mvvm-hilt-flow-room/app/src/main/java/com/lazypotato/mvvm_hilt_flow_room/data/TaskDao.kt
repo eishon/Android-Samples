@@ -1,7 +1,6 @@
 package com.lazypotato.mvvm_hilt_flow_room.data
 
 import androidx.room.*
-import com.lazypotato.mvvm_hilt_flow_room.ui.tasks.SortOrder
 import kotlinx.coroutines.flow.Flow
 
 @Dao
