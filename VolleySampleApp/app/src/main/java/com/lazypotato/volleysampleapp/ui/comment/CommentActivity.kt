@@ -9,10 +9,15 @@ import com.lazypotato.volleysampleapp.data.network.comment.get.CommentResponseLi
 import com.lazypotato.volleysampleapp.data.network.comment.get.GETComments
 import com.lazypotato.volleysampleapp.data.network.comment.model.Comment
 import com.lazypotato.volleysampleapp.databinding.ActivityCommentBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class CommentActivity : AppCompatActivity(), CommentResponseListener {
 
     private lateinit var binding: ActivityCommentBinding
+
+    @Inject lateinit var getComments: GETComments
 
     private var postId: Int = -1
 
@@ -33,7 +38,7 @@ class CommentActivity : AppCompatActivity(), CommentResponseListener {
         setRecyclerView()
 
         if(postId != -1) {
-            GETComments(applicationContext, this, postId).requestCommentsList()
+            getComments.requestCommentsList(this, postId)
         }
     }
 

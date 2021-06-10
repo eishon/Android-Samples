@@ -15,18 +15,22 @@ import com.lazypotato.volleysampleapp.util.LogUtil
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import javax.inject.Inject
 
-class GETPhotos(context: Context, listener: PhotoResponseListener) : BaseAPIStringVolley() {
+class GETPhotos @Inject constructor(
+    private val context: Context,
+    private val errorHandler: ErrorHandler
+) : BaseAPIStringVolley() {
 
-    private val TAG = "GET POSTS"
+    private val TAG = "GET PHOTOS"
 
-    private var context: Context = context
-    private var listener: PhotoResponseListener = listener
+    private lateinit var listener: PhotoResponseListener
 
     private lateinit var url: String
 
-    fun requestPhotosList(albumId: Int) {
-        url = NetworkConstants.photosGET(albumId)
+    fun requestPhotosList(listener: PhotoResponseListener,albumId: Int) {
+        this.url = NetworkConstants.photosGET(albumId)
+        this.listener = listener
 
         processRequest();
     }
@@ -60,11 +64,11 @@ class GETPhotos(context: Context, listener: PhotoResponseListener) : BaseAPIStri
     }
 
     override fun onError(error: VolleyError?) {
-//        val errorMessage: String = ErrorHandler.handleError(context, error)
-//
-//        if (error != null) {
-//            listener.onPhotoResponse(mutableListOf(), error.networkResponse.statusCode)
-//        }
+        val errorMessage: String = errorHandler.handleError(context, error)
+
+        if (error != null) {
+            listener.onPhotoResponse(mutableListOf(), error.networkResponse.statusCode)
+        }
     }
 
     private fun prepareJson(id: Int): JSONObject {

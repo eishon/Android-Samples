@@ -13,17 +13,22 @@ import com.lazypotato.volleysampleapp.util.LogUtil
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import javax.inject.Inject
 
-class GETUsers(context: Context, listener: UserResponseListener) : BaseAPIStringVolley() {
+class GETUsers @Inject constructor(
+    private val context: Context,
+    private val errorHandler: ErrorHandler
+) : BaseAPIStringVolley() {
 
     private val TAG = "GET USERS"
 
-    private var context: Context = context
-    private var listener: UserResponseListener = listener
+    private lateinit var listener: UserResponseListener
 
     private val url: String = NetworkConstants.userGET()
 
-    fun requestUsersList() {
+    fun requestUsersList(listener: UserResponseListener) {
+        this.listener = listener
+
         processRequest();
     }
 
@@ -56,11 +61,11 @@ class GETUsers(context: Context, listener: UserResponseListener) : BaseAPIString
     }
 
     override fun onError(error: VolleyError?) {
-//        val errorMessage: String = ErrorHandler.handleError(context, error)
-//
-//        if (error != null) {
-//            listener.onUsersResponse(mutableListOf(), error.networkResponse.statusCode)
-//        }
+        val errorMessage: String = errorHandler.handleError(context, error)
+
+        if (error != null) {
+            listener.onUsersResponse(mutableListOf(), error.networkResponse.statusCode)
+        }
     }
 
     private fun prepareJson(id: Int): JSONObject {

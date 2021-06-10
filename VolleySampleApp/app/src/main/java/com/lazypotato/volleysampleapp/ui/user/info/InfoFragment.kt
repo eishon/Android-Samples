@@ -14,11 +14,16 @@ import com.lazypotato.volleysampleapp.data.network.user.get.UserInfoResponseList
 import com.lazypotato.volleysampleapp.data.network.user.model.User
 import com.lazypotato.volleysampleapp.databinding.FragmentUserInfoBinding
 import com.lazypotato.volleysampleapp.ui.user.UserActivity
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class InfoFragment : Fragment(), UserInfoResponseListener {
 
     private lateinit var infoViewModel: InfoViewModel
     private var _binding: FragmentUserInfoBinding? = null
+
+    @Inject lateinit var getUserInfo: GETUserInfo
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -46,7 +51,7 @@ class InfoFragment : Fragment(), UserInfoResponseListener {
         userId = (activity as UserActivity).intent.getIntExtra("USER_ID", -1)
 
         if(userId != -1) {
-            context?.let { GETUserInfo(it,this).requestUserInfo(userId) }
+            context?.let { getUserInfo.requestUserInfo(this, userId) }
         }
     }
 

@@ -8,7 +8,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.lazypotato.volleysampleapp.R
 import com.lazypotato.volleysampleapp.databinding.ActivityUserBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class UserActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserBinding

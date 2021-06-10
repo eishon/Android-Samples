@@ -22,6 +22,7 @@ class PostActivity : AppCompatActivity(),
     lateinit var binding: ActivityPostBinding
 
     @Inject lateinit var getPosts: GETPosts
+    @Inject lateinit var getUsers: GETUsers
 
     private var userMap = mutableMapOf<Int, User>()
 
@@ -36,7 +37,7 @@ class PostActivity : AppCompatActivity(),
 
         setRecyclerView()
 
-        GETUsers(applicationContext, this).requestUsersList()
+        getUsers.requestUsersList(this)
 
     }
 

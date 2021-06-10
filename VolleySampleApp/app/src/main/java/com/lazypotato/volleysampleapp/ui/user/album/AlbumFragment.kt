@@ -16,11 +16,16 @@ import com.lazypotato.volleysampleapp.data.network.todos.get.GETToDos
 import com.lazypotato.volleysampleapp.databinding.FragmentUserAlbumBinding
 import com.lazypotato.volleysampleapp.ui.user.UserActivity
 import com.lazypotato.volleysampleapp.ui.user.todos.ToDoRecyclerViewAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class AlbumFragment : Fragment(), AlbumResponseListener {
 
     private lateinit var albumViewModel: AlbumViewModel
     private var _binding: FragmentUserAlbumBinding? = null
+
+    @Inject lateinit var getAlbums: GETAlbums
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -49,7 +54,7 @@ class AlbumFragment : Fragment(), AlbumResponseListener {
         userId = (activity as UserActivity).intent.getIntExtra("USER_ID", -1)
 
         if(userId != -1){
-            context?.let { GETAlbums(it, this).requestAlbumsList(userId) }
+            context?.let { getAlbums.requestAlbumsList(this, userId) }
         }
     }
 

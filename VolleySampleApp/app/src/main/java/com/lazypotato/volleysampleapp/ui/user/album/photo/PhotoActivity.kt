@@ -12,10 +12,15 @@ import com.lazypotato.volleysampleapp.data.network.photo.model.Photo
 import com.lazypotato.volleysampleapp.databinding.ActivityPhotoBinding
 import com.lazypotato.volleysampleapp.databinding.ActivityUserBinding
 import com.lazypotato.volleysampleapp.ui.comment.CommentRecyclerViewAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class PhotoActivity : AppCompatActivity(), PhotoResponseListener {
 
     private lateinit var binding: ActivityPhotoBinding
+
+    @Inject lateinit var getPhotos: GETPhotos
 
     var albumId: Int = -1
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +39,7 @@ class PhotoActivity : AppCompatActivity(), PhotoResponseListener {
         setRecyclerView()
 
         if(albumId != -1) {
-            GETPhotos(applicationContext, this).requestPhotosList(albumId)
+            getPhotos.requestPhotosList(this, albumId)
         }
     }
 

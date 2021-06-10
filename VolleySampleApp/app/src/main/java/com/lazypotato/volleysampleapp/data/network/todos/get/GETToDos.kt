@@ -14,18 +14,22 @@ import com.lazypotato.volleysampleapp.util.LogUtil
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import javax.inject.Inject
 
-class GETToDos(context: Context, listener: ToDoResponseListener) : BaseAPIStringVolley() {
+class GETToDos @Inject constructor(
+    private val context: Context,
+    private val errorHandler: ErrorHandler
+) : BaseAPIStringVolley() {
 
     private val TAG = "GET TODOS"
 
-    private var context: Context = context
-    private var listener: ToDoResponseListener = listener
+    private lateinit var listener: ToDoResponseListener
 
     private lateinit var url: String
 
-    fun requestToDosList(userId: Int) {
-        url = NetworkConstants.todosGET(userId)
+    fun requestToDosList(listener: ToDoResponseListener, userId: Int) {
+        this.url = NetworkConstants.todosGET(userId)
+        this.listener = listener
 
         processRequest();
     }
@@ -59,11 +63,11 @@ class GETToDos(context: Context, listener: ToDoResponseListener) : BaseAPIString
     }
 
     override fun onError(error: VolleyError?) {
-//        val errorMessage: String = ErrorHandler.handleError(context, error)
-//
-//        if (error != null) {
-//            listener.onToDoResponse(mutableListOf(), error.networkResponse.statusCode)
-//        }
+        val errorMessage: String = errorHandler.handleError(context, error)
+
+        if (error != null) {
+            listener.onToDoResponse(mutableListOf(), error.networkResponse.statusCode)
+        }
     }
 
     private fun prepareJson(id: Int): JSONObject {

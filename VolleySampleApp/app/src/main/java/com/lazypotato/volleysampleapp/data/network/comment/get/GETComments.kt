@@ -13,21 +13,23 @@ import com.lazypotato.volleysampleapp.util.LogUtil
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import javax.inject.Inject
 
-class GETComments(
-    context: Context,
-    listener: CommentResponseListener,
-    postId: Int
+class GETComments @Inject constructor(
+    private val context: Context,
+    private val errorHandler: ErrorHandler
 ) : BaseAPIStringVolley() {
 
     private val TAG = "GET POSTS"
 
-    private var context: Context = context
-    private var listener: CommentResponseListener = listener
+    private lateinit var listener: CommentResponseListener
 
-    private val url: String = NetworkConstants.commentsGET(postId)
+    private lateinit var url: String
 
-    fun requestCommentsList() {
+    fun requestCommentsList(listener: CommentResponseListener, postId: Int) {
+        this.url = NetworkConstants.commentsGET(postId)
+        this.listener = listener
+
         processRequest();
     }
 
@@ -60,11 +62,11 @@ class GETComments(
     }
 
     override fun onError(error: VolleyError?) {
-//        val errorMessage: String = ErrorHandler.handleError(context, error)
-//
-//        if (error != null) {
-//            listener.onCommentResponse(mutableListOf(), error.networkResponse.statusCode)
-//        }
+        val errorMessage: String = errorHandler.handleError(context, error)
+
+        if (error != null) {
+            listener.onCommentResponse(mutableListOf(), error.networkResponse.statusCode)
+        }
     }
 
     private fun prepareJson(id: Int): JSONObject {

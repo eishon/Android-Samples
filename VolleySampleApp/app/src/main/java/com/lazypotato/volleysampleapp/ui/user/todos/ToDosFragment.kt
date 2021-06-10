@@ -13,11 +13,16 @@ import com.lazypotato.volleysampleapp.data.network.todos.model.ToDo
 import com.lazypotato.volleysampleapp.databinding.FragmentUserTodosBinding
 import com.lazypotato.volleysampleapp.ui.comment.CommentRecyclerViewAdapter
 import com.lazypotato.volleysampleapp.ui.user.UserActivity
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class ToDosFragment : Fragment(), ToDoResponseListener {
 
     private lateinit var toDosViewModel: ToDosViewModel
     private var _binding: FragmentUserTodosBinding? = null
+
+    @Inject lateinit var getToDos: GETToDos
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -46,7 +51,7 @@ class ToDosFragment : Fragment(), ToDoResponseListener {
         userId = (activity as UserActivity).intent.getIntExtra("USER_ID", -1)
 
         if(userId != -1){
-            context?.let { GETToDos(it, this).requestToDosList(userId) }
+            context?.let { getToDos.requestToDosList(this, userId) }
         }
     }
 

@@ -14,18 +14,22 @@ import com.lazypotato.volleysampleapp.util.LogUtil
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import javax.inject.Inject
 
-class GETAlbums(context: Context, listener: AlbumResponseListener) : BaseAPIStringVolley() {
+class GETAlbums @Inject constructor(
+    private val context: Context,
+    private val errorHandler: ErrorHandler
+) : BaseAPIStringVolley() {
 
     private val TAG = "GET ALBUMS"
 
-    private var context: Context = context
-    private var listener: AlbumResponseListener = listener
+    private lateinit var listener: AlbumResponseListener
 
     private lateinit var url: String
 
-    fun requestAlbumsList(userId: Int) {
-        url = NetworkConstants.albumsGET(userId)
+    fun requestAlbumsList(listener: AlbumResponseListener, userId: Int) {
+        this.url = NetworkConstants.albumsGET(userId)
+        this.listener = listener
 
         processRequest();
     }
@@ -59,11 +63,11 @@ class GETAlbums(context: Context, listener: AlbumResponseListener) : BaseAPIStri
     }
 
     override fun onError(error: VolleyError?) {
-//        val errorMessage: String = ErrorHandler.handleError(context, error)
-//
-//        if (error != null) {
-//            listener.onAlbumResponse(mutableListOf(), error.networkResponse.statusCode)
-//        }
+        val errorMessage: String = errorHandler.handleError(context, error)
+
+        if (error != null) {
+            listener.onAlbumResponse(mutableListOf(), error.networkResponse.statusCode)
+        }
     }
 
     private fun prepareJson(id: Int): JSONObject {
