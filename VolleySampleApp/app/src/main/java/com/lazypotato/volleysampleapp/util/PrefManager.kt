@@ -5,25 +5,16 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.lazypotato.volleysampleapp.data.constant.PreferenceConstants
 import com.lazypotato.volleysampleapp.data.model.LocalUser
+import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class PrefManager private constructor(context: Context) {
-    companion object {
-        private const val TAG = "PREF MANAGER"
+private const val TAG = "PREF MANAGER"
 
-        private var pref: SharedPreferences? = null
-        private var instance: PrefManager? = null
-
-        @Synchronized
-        fun getInstance(context: Context): PrefManager? {
-            if (pref == null) instance = PrefManager(context)
-            return instance
-        }
-    }
-
-    init {
-        pref = context.getSharedPreferences(TAG, Activity.MODE_PRIVATE)
-    }
+@Singleton
+class PrefManager @Inject constructor(context: Context) {
+    private var pref: SharedPreferences = context.getSharedPreferences(TAG, Activity.MODE_PRIVATE)
 
     val isLaunchedFirstTime: Boolean
         get() = pref!!.getBoolean(PreferenceConstants.FIRST_LAUNCH, true)

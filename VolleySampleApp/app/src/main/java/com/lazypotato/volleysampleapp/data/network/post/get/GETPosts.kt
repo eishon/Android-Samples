@@ -10,20 +10,26 @@ import com.lazypotato.volleysampleapp.data.network.post.model.Post
 import com.lazypotato.volleysampleapp.data.network.util.ErrorHandler
 import com.lazypotato.volleysampleapp.data.network.util.NetworkConstants
 import com.lazypotato.volleysampleapp.util.LogUtil
+import dagger.hilt.android.qualifiers.ApplicationContext
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import javax.inject.Inject
 
-class GETPosts(context: Context, listener: PostResponseListener) : BaseAPIStringVolley() {
+class GETPosts @Inject constructor(
+    private val context: Context,
+    private val errorHandler: ErrorHandler
+) : BaseAPIStringVolley() {
 
     private val TAG = "GET POSTS"
 
-    private var context: Context = context
-    private var listener: PostResponseListener = listener
+    private lateinit var listener: PostResponseListener
 
     private val url: String = NetworkConstants.postGET()
 
-    fun requestPostsList() {
+    fun requestPostsList(listener: PostResponseListener) {
+        this.listener = listener
+
         processRequest();
     }
 
@@ -56,7 +62,7 @@ class GETPosts(context: Context, listener: PostResponseListener) : BaseAPIString
     }
 
     override fun onError(error: VolleyError?) {
-        val errorMessage: String = ErrorHandler.handleError(context, error)
+        val errorMessage: String = errorHandler.handleError(context, error)
 
         if (error != null) {
             listener.onPostResponse(mutableListOf(), error.networkResponse.statusCode)

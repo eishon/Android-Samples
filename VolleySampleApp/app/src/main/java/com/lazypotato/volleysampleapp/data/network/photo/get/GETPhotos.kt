@@ -60,11 +60,11 @@ class GETPhotos(context: Context, listener: PhotoResponseListener) : BaseAPIStri
     }
 
     override fun onError(error: VolleyError?) {
-        val errorMessage: String = ErrorHandler.handleError(context, error)
-
-        if (error != null) {
-            listener.onPhotoResponse(mutableListOf(), error.networkResponse.statusCode)
-        }
+//        val errorMessage: String = ErrorHandler.handleError(context, error)
+//
+//        if (error != null) {
+//            listener.onPhotoResponse(mutableListOf(), error.networkResponse.statusCode)
+//        }
     }
 
     private fun prepareJson(id: Int): JSONObject {

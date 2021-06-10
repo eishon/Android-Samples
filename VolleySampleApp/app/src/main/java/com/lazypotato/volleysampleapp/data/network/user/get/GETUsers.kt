@@ -56,11 +56,11 @@ class GETUsers(context: Context, listener: UserResponseListener) : BaseAPIString
     }
 
     override fun onError(error: VolleyError?) {
-        val errorMessage: String = ErrorHandler.handleError(context, error)
-
-        if (error != null) {
-            listener.onUsersResponse(mutableListOf(), error.networkResponse.statusCode)
-        }
+//        val errorMessage: String = ErrorHandler.handleError(context, error)
+//
+//        if (error != null) {
+//            listener.onUsersResponse(mutableListOf(), error.networkResponse.statusCode)
+//        }
     }
 
     private fun prepareJson(id: Int): JSONObject {

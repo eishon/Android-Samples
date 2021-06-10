@@ -59,11 +59,11 @@ class GETAlbums(context: Context, listener: AlbumResponseListener) : BaseAPIStri
     }
 
     override fun onError(error: VolleyError?) {
-        val errorMessage: String = ErrorHandler.handleError(context, error)
-
-        if (error != null) {
-            listener.onAlbumResponse(mutableListOf(), error.networkResponse.statusCode)
-        }
+//        val errorMessage: String = ErrorHandler.handleError(context, error)
+//
+//        if (error != null) {
+//            listener.onAlbumResponse(mutableListOf(), error.networkResponse.statusCode)
+//        }
     }
 
     private fun prepareJson(id: Int): JSONObject {

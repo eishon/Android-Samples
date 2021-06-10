@@ -10,10 +10,12 @@ import com.lazypotato.volleysampleapp.util.LogUtil
 import com.lazypotato.volleysampleapp.util.PrefManager
 import org.json.JSONException
 import org.json.JSONObject
+import javax.inject.Inject
 
-object ErrorHandler {
+class ErrorHandler @Inject constructor(
+    private val prefManager: PrefManager,
+) {
 
-    @JvmStatic
     fun handleError(context: Context, error: VolleyError?): String {
         val networkResponse = error?.networkResponse
         var errorMessage = context.getString(R.string.try_again_later)
@@ -34,7 +36,7 @@ object ErrorHandler {
                 if (networkResponse.statusCode == 404) {
                     errorMessage = context.getString(R.string.resource_not_found)
                 } else if (networkResponse.statusCode == 401) {
-                    PrefManager.getInstance(context)!!.clearUserData()
+                    prefManager.clearUserData()
                     errorMessage = context.getString(R.string.please_login_again)
                 } else if (networkResponse.statusCode == 400) {
                     errorMessage = context.getString(R.string.invalid_user_id)
@@ -47,4 +49,7 @@ object ErrorHandler {
         }
         return errorMessage
     }
+
+    private fun handleAuthError() {}
+    private fun handleTimeOutError() {}
 }

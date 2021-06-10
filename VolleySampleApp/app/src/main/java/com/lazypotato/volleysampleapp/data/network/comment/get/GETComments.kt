@@ -60,11 +60,11 @@ class GETComments(
     }
 
     override fun onError(error: VolleyError?) {
-        val errorMessage: String = ErrorHandler.handleError(context, error)
-
-        if (error != null) {
-            listener.onCommentResponse(mutableListOf(), error.networkResponse.statusCode)
-        }
+//        val errorMessage: String = ErrorHandler.handleError(context, error)
+//
+//        if (error != null) {
+//            listener.onCommentResponse(mutableListOf(), error.networkResponse.statusCode)
+//        }
     }
 
     private fun prepareJson(id: Int): JSONObject {

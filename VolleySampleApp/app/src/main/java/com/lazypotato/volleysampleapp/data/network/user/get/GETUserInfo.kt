@@ -53,11 +53,11 @@ class GETUserInfo(context: Context, listener: UserInfoResponseListener) : BaseAP
     }
 
     override fun onError(error: VolleyError?) {
-        val errorMessage: String = ErrorHandler.handleError(context, error)
-
-        if (error != null) {
-            listener.onUserInfoResponse(null, error.networkResponse.statusCode)
-        }
+//        val errorMessage: String = ErrorHandler.handleError(context, error)
+//
+//        if (error != null) {
+//            listener.onUserInfoResponse(null, error.networkResponse.statusCode)
+//        }
     }
 
     private fun prepareJson(id: Int): JSONObject {

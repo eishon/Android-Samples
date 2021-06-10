@@ -12,12 +12,16 @@ import com.lazypotato.volleysampleapp.data.network.user.get.UserResponseListener
 import com.lazypotato.volleysampleapp.data.network.user.model.User
 import com.lazypotato.volleysampleapp.databinding.ActivityPostBinding
 import com.lazypotato.volleysampleapp.ui.post.PostRecyclerViewAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class PostActivity : AppCompatActivity(),
     PostResponseListener, UserResponseListener {
 
     lateinit var binding: ActivityPostBinding
+
+    @Inject lateinit var getPosts: GETPosts
 
     private var userMap = mutableMapOf<Int, User>()
 
@@ -51,7 +55,7 @@ class PostActivity : AppCompatActivity(),
             userMap[user.id] = user
         }
 
-        GETPosts(applicationContext, this).requestPostsList()
+        getPosts.requestPostsList(this)
     }
 
     override fun showProgress(flag: Boolean) {
