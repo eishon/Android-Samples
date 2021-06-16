@@ -1,0 +1,21 @@
+<resources>
+    <string name="check_internet_connection">Check Internet Connection</string>
+    <string name="please_login_again">Please login again</string>
+    <string name="enter_valid_username">Please Enter User ID</string>
+    <string name="password_length_not_valid">Please Enter Password</string>
+    <string name="authenticating">Authenticating...</string>
+    <string name="loading">Loading...</string>
+    <string name="no_data">No Data Found</string>
+    <string name="try_again_later">Something went wrong. Please try again later.</string>
+    <string name="timeout_error">Request timeout</string>
+    <string name="failed_to_connect">Failed to connect server</string>
+    <string name="resource_not_found">Resource not found</string>
+    <string name="invalid_user_id">Invalid User ID</string>
+    <string name="internal_server_error">Internal server error</string>
+
+    <string name="title_activity_user">MainActivity</string>
+
+    <string name="title_user_info">User Info</string>
+    <string name="title_user_album">Album</string>
+    <string name="title_user_todo">ToDo</string>
+</resources>

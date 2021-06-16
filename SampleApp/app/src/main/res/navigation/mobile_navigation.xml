@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_user_info">
+
+    <fragment
+        android:id="@+id/navigation_user_info"
+        android:name="com.lazypotato.volleysampleapp.ui.user.info.InfoFragment"
+        android:label="@string/title_user_info"
+        tools:layout="@layout/fragment_user_info" />
+
+    <fragment
+        android:id="@+id/navigation_user_album"
+        android:name="com.lazypotato.volleysampleapp.ui.user.album.AlbumFragment"
+        android:label="@string/title_user_album"
+        tools:layout="@layout/fragment_user_album" />
+
+    <fragment
+        android:id="@+id/navigation_user_todo"
+        android:name="com.lazypotato.volleysampleapp.ui.user.todos.ToDosFragment"
+        android:label="@string/title_user_todo"
+        tools:layout="@layout/fragment_user_todos" />
+</navigation>
