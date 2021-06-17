@@ -3,6 +3,7 @@ package com.lazypotato.androidtestpractice
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import com.google.common.truth.Truth.assertThat
+import com.lazypotato.androidtestpractice.util.ResourceComparator
 import org.junit.After
 import org.junit.Before
 import org.junit.Test

@@ -1,4 +1,4 @@
- package com.lazypotato.androidtestpractice
+package com.lazypotato.androidtestpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

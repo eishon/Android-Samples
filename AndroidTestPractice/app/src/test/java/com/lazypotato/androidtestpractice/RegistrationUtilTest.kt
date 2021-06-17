@@ -1,6 +1,7 @@
 package com.lazypotato.androidtestpractice
 
 import com.google.common.truth.Truth.assertThat
+import com.lazypotato.androidtestpractice.util.RegistrationUtil
 import org.junit.Test
 
 class RegistrationUtilTest {

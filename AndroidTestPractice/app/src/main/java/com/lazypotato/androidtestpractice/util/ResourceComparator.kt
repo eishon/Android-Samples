@@ -1,4 +1,4 @@
-package com.lazypotato.androidtestpractice
+package com.lazypotato.androidtestpractice.util
 
 import android.content.Context
 
