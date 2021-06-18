@@ -125,4 +125,5 @@ dependencies {
     androidTestImplementation "org.mockito:mockito-core:3.9.0"
     androidTestImplementation "com.google.dagger:hilt-android-testing:2.36"
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:2.36"
+    debugImplementation 'androidx.fragment:fragment-testing:1.4.0-alpha03'
 }
