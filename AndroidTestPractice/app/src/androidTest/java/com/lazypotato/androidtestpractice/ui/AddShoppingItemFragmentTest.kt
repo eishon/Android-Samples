@@ -58,8 +58,8 @@ class AddShoppingItemFragmentTest{
         }
 
         onView(withId(R.id.etShoppingItemName)).perform(replaceText("shopping item"))
-        onView(withId(R.id.etShoppingItemName)).perform(replaceText("5"))
-        onView(withId(R.id.etShoppingItemName)).perform(replaceText("5.5"))
+        onView(withId(R.id.etShoppingItemAmount)).perform(replaceText("5"))
+        onView(withId(R.id.etShoppingItemPrice)).perform(replaceText("5.5"))
         onView(withId(R.id.btnAddShoppingItem)).perform(click())
 
         assertThat(testViewModel.shoppingItems.getOrAwaitValue())
