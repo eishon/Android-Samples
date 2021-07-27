@@ -1,17 +1,377 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host_fragment"
+    android:fillViewport="true"
+    android:background="#FFFFFF">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="#E6332049"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".MainActivityActivity">
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!-- frame_12  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="85dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                android:background="@drawable/story_row">
+                <!--Summary, Story, connclusion and rating layout-->
+                <!--Summary start -->
+                <RelativeLayout
+                    android:id="@+id/frame_3_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/frame_3">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="14dp">
+                        <TextView
+                            android:id="@+id/description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="sans-serif"
+                            android:gravity="top"
+                            android:lineSpacingExtra="3sp"
+                            android:text="Hello this is description part for testing purpose it wont appear when the app is in running mode"
+                            android:textColor="#FFFFFF "
+                            android:textSize="15sp"
+                            android:translationY="-1.58sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeTextType="none" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="343dp"
+                        android:layout_height="27dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif"
+                        android:gravity="top"
+                        android:text="Summary"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+                <!-- Summary End-->
+                <!--Story start -->
+                <RelativeLayout
+                    android:id="@+id/frame_5_story"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/frame_3_summary"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/frame_5">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginEnd="17dp"
+                        android:layout_marginBottom="16dp">
+                        <TextView
+                            android:id="@+id/story"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginBottom="8dp"
+                            android:autoSizeStepGranularity="2sp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="top"
+                            android:lineSpacingExtra="3sp"
+                            android:text="@string/story_detail"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:translationY="-1.58sp"
+                            app:autoSizeMinTextSize="12sp"
+                            android:autoSizeMaxTextSize="50sp"
+                            app:autoSizeTextType="uniform"
+                            tools:targetApi="o" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="311dp"
+                        android:layout_height="27dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif"
+                        android:gravity="top"
+                        android:text="Story"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+                <!--Story end -->
+                <!--conclusion start -->
+                <RelativeLayout
+                    android:id="@+id/frame_4_conclusion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/frame_5_story"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/frame_4">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginEnd="17dp"
+                        android:layout_marginBottom="14dp">
+                        <TextView
+                            android:id="@+id/conclusion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="sans-serif"
+
+                            android:gravity="top"
+                            android:lineSpacingExtra="3sp"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet."
+                            android:textColor="#F2F2F3"
+                            android:textSize="15sp"
+                            android:translationY="-1.58sp"
+                            app:lineHeight="24sp" />
+                    </RelativeLayout>
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="29dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="sans-serif"
+                        android:gravity="top"
+                        android:text="Conclusion"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:lineHeight="27sp" />
+                </RelativeLayout>
+                <!--conclusion end -->
+                <!--Rating bar start-->
+                <!-- Rating -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_below="@+id/frame_4_conclusion"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/button">
+                    <!-- Text -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="35dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="10"
+                        tools:ignore="UselessParent">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_weight="10"
+                            android:fontFamily="sans-serif"
+                            android:lineHeight="18sp"
+                            android:text="Rate this story"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+
+                            tools:ignore="UnusedAttribute" />
+                        <!-- stars -->
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+
+
+                            >
+                            <RatingBar
+                                android:id="@+id/ratingBar"
+                                style="@style/MyRatingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="28dp"
+                                android:isIndicator="false"
+                                android:numStars="5"
+                                android:progressBackgroundTint="@color/white"
+                                android:progressTint="#FDD835"
+                                android:rating="0"
+                                android:scaleX="1"
+                                android:scaleY="1"
+                                android:secondaryProgressTint="@android:color/white"
+                                android:stepSize="0.5"
+                                tools:ignore="UnusedAttribute" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <!--Rating bar end-->
+            </RelativeLayout>
+            <!-- Header layout start   -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="74dp"
+                    android:layout_alignParentTop="true"
+                    tools:ignore="UselessParent">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="74dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true">
+                        <RelativeLayout
+                            android:layout_width="102dp"
+                            android:layout_height="18dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="52dp">
+                            <RelativeLayout
+                                android:layout_width="45dp"
+                                android:layout_height="18dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="50dp">
+                                <TextView
+                                    android:id="@+id/views"
+                                    android:layout_width="25dp"
+                                    android:layout_height="18dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginStart="17dp"
+                                    android:gravity="top"
+                                    android:text="556"
+                                    android:textColor="#FFFFFF "
+                                    android:textSize="13sp" />
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:background="@drawable/ic_show"
+                                    android:contentDescription="eye" />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="41dp"
+                                android:layout_height="18dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true">
+                                <TextView
+                                    android:id="@+id/rating"
+                                    android:layout_width="21dp"
+                                    android:layout_height="18dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginStart="17dp"
+                                    android:gravity="top"
+                                    android:text="4.5"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="13sp" />
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2.67dp"
+                                    android:layout_marginBottom="2.67dp"
+                                    android:background="@drawable/staar"
+                                    android:contentDescription="star" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="30dp"
+                            android:gravity="top"
+                            android:text="By"
+                            android:textColor="#F2F2F3"
+                            android:textSize="12sp"
+
+                            />
+                        <TextView
+                            android:id="@+id/authorName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="top"
+                            android:text="Author name"
+                            android:textColor="#F2F2F3"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/header"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="sans-serif"
+                            android:gravity="top"
+                            android:lineSpacingExtra="0sp"
+                            android:text="Three Bears"
+                            android:textColor="@color/white"
+                            android:textSize="22sp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
