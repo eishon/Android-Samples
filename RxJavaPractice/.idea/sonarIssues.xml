@@ -18,6 +18,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/rxjavapractice/rx/SimpleRx.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/rxjavapractice/rx/Traits.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>

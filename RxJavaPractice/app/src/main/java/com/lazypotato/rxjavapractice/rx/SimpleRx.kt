@@ -1,4 +1,4 @@
-package com.lazypotato.rxjavapractice
+package com.lazypotato.rxjavapractice.rx
 
 import com.jakewharton.rxrelay3.BehaviorRelay
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
