@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/build/tmp/kapt3/stubs/debug/com/lazypotato/rxjavapractice/database/PostDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/src/main/java/com/lazypotato/rxjavapractice/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/src/main/java/com/lazypotato/rxjavapractice/database/AppDatabase.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/src/main/java/com/lazypotato/rxjavapractice/database/DB.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/src/main/java/com/lazypotato/rxjavapractice/database/PostDao.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/src/main/java/com/lazypotato/rxjavapractice/post/PostActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/src/main/java/com/lazypotato/rxjavapractice/post/PostListAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/src/main/java/com/lazypotato/rxjavapractice/post/PostPresenter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../RxJavaPractice/app/src/main/java/com/lazypotato/rxjavapractice/post/PostRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/volleysampleapp/ui/post/PostRecyclerViewAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

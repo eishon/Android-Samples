@@ -1,23 +1,21 @@
 package com.lazypotato.rxjavapractice
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.lazypotato.rxjavapractice.database.DB
 import com.lazypotato.rxjavapractice.databinding.ActivityMainBinding
-import com.lazypotato.rxjavapractice.rx.SimpleRx
-import com.lazypotato.rxjavapractice.rx.Traits
+import com.lazypotato.rxjavapractice.network.RetrofitService.service
+import com.lazypotato.rxjavapractice.model.Post
+import com.lazypotato.rxjavapractice.post.PostActivity
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Path
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
@@ -25,22 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private var bag = CompositeDisposable()
-
-    // region Simple Network Layer
-
-    interface JsonPlaceHolderService {
-        @GET("posts/{id}")
-        fun getPosts(@Path("id") id: String): Call<Posting>
-    }
-
-    private var retrofit = Retrofit.Builder()
-        .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl("https://jsonplaceholder.typicode.com/")
-        .build()
-
-    private var service = retrofit.create(JsonPlaceHolderService::class.java)
-
-    // endregion
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +33,10 @@ class MainActivity : AppCompatActivity() {
         //Traits.traitsMayBe()
 
         realSingleExample()
+
+        binding.button.setOnClickListener {
+            startActivity(Intent(applicationContext, PostActivity::class.java))
+        }
     }
 
     //region Rx Code
@@ -68,14 +54,14 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    private fun loadPostAsSingle(): Single<Posting> {
+    private fun loadPostAsSingle(): Single<Post> {
         return Single.create { observer ->
             Thread.sleep(2000)
             
             val postingId = 5
-            service.getPosts(postingId.toString())
-                .enqueue(object : Callback<Posting> {
-                    override fun onResponse(call: Call<Posting>, response: Response<Posting>) {
+            service.getPostDetails(postingId.toString())
+                .enqueue(object : Callback<Post> {
+                    override fun onResponse(call: Call<Post>, response: Response<Post>) {
                         val posting = response?.body()
 
                         if(posting != null) {
@@ -86,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
-                    override fun onFailure(call: Call<Posting>, t: Throwable) {
+                    override fun onFailure(call: Call<Post>, t: Throwable) {
                         val e = t ?: IOException("An Unknown Network Error Occurred")
                         observer.onError(e)
                     }
