@@ -13,6 +13,66 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/data/api/TheMovieDBClient.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/data/api/TheMovieDBService.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/data/repository/MovieDetailsNetworkDataSource.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/data/repository/NetworkState.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/ui/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/ui/MovieDetailsRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/ui/MovieDetailsViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/ui/SecondActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/ui/movie_details/MovieDetailsViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/ui/movie_details/MovieDetailsViewModelFactory.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_second.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../RxJavaPractice/app/build.gradle">
           <value>
             <set />
