@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/../MVVMRxJavaRetrofitPaging/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MVVMRxJavaRetrofitPaging/app/src/main/java/com/lazypotato/mvvm_rxjava_retrofit_paging/MainActivity.kt">
           <value>
             <set />
