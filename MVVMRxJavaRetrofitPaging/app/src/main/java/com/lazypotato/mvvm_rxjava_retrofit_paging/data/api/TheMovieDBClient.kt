@@ -7,10 +7,13 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-const val API_KEY = "70a2a89111c00cf15ddcd73cca0614d3"
+const val API_KEY = ""
 const val BASE_URL = "https://api.themoviedb.org/3/"
 
 const val POSTER_BASE_URL = "https://image.tmdb.org/t//p/w342"
+
+const val FIRST_PAGE = 1
+const val POST_PER_PAGE = 20
 
 object TheMovieDBClient {
     fun getClient(): TheMovieDBService {
