@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="$USER_HOME$/Downloads/android-workmanager-start_kotlin/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/android-workmanager-start_kotlin/app/src/main/java/com/example/background/BlurActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/android-workmanager-start_kotlin/app/src/main/java/com/example/background/BlurViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/android-workmanager-start_kotlin/app/src/main/java/com/example/background/workers/BlurWorker.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/android-workmanager-start_kotlin/app/src/main/java/com/example/background/workers/CleanupWorker.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/android-workmanager-start_kotlin/app/src/main/java/com/example/background/workers/SaveImageToFileWorker.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/lazypotato/espressopractice/FirstTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/build/tmp/kapt3/stubs/passengerDebug/com/chokrojan/passenger/ui/help/HelpViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/main/java/com/inovace/chokrojan/ui/SplashActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/data/model/Checkout.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/data/model/bkash/PaymentRequest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/data/network/GenericMessage.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/ui/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/ui/booking/BookingActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/ui/help/HelpFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/ui/help/HelpViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/utils/BkashPaymentJSInterface.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/utils/OnPaymentOperation.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/java/com/chokrojan/passenger/utils/PaymentJSInterface.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/app/src/passenger/res/layout/nav_header_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../chokrojan/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

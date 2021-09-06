@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WorkManager-Notifications</string>
+
+    <string name="channel_name">Workmanager-Notification Notification Channel</string>
+    <string name="channel_description">Notification Channel for Workmanager-Notification</string>
+
+    <string name="snooze">Snooze</string>
+</resources>

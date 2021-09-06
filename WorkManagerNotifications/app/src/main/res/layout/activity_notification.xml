@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    tools:context="com.lazypotato.workmanager_notifications.NotificationActivity">
+
+
+    <Button
+        android:id="@+id/basicNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Basic Notification" />
+
+    <Button
+        android:id="@+id/basicNotificationLargeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Basic Notification Large Text" />
+
+    <Button
+        android:id="@+id/tapAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap" />
+
+    <Button
+        android:id="@+id/tapButtonAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap Action" />
+
+    <Button
+        android:id="@+id/messagingNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Messaging" />
+
+    <Button
+        android:id="@+id/progressNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Progress Notification" />
+
+</LinearLayout>
