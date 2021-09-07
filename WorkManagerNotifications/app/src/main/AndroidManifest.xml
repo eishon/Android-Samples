@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="workmanager_notifications">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -32,6 +34,19 @@
         <receiver android:name="com.lazypotato.workmanager_notifications.receiver.MyBroadcastReceiver"  android:exported="false">
             <intent-filter>
                 <action android:name="com.lazypotato.workmanager_notifications.notifications.tap_action.snooze"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.lazypotato.workmanager_notifications.receiver.MediaBroadcastReceiver"  android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.lazypotato.workmanager_notifications.receiver.MessageBroadcastReceiver"  android:exported="false">
+            <intent-filter>
+                <action android:name="com.lazypotato.workmanager_notifications.notifications.tap_action.message"/>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>

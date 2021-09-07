@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,40 +9,94 @@
     tools:context="com.lazypotato.workmanager_notifications.NotificationActivity">
 
 
-    <Button
-        android:id="@+id/basicNotification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Basic Notification" />
 
-    <Button
-        android:id="@+id/basicNotificationLargeText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Basic Notification Large Text" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/tapAction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tap" />
+            <Button
+                android:id="@+id/basicNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Basic Notification" />
 
-    <Button
-        android:id="@+id/tapButtonAction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tap Action" />
+            <Button
+                android:id="@+id/basicNotificationLargeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Basic Notification Large Text" />
 
-    <Button
-        android:id="@+id/messagingNotification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Messaging" />
+            <Button
+                android:id="@+id/basicNotificationLargeImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Basic Notification Large Image" />
 
-    <Button
-        android:id="@+id/progressNotification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Progress Notification" />
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/tapAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap" />
+
+            <Button
+                android:id="@+id/tapButtonAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap Action" />
+
+            <Button
+                android:id="@+id/replyButtonAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reply Action" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <Button
+                android:id="@+id/progressNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Progress Notification" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <Button
+                android:id="@+id/inboxMessaging"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inbox Style Messaging" />
+
+            <Button
+                android:id="@+id/conversationMessaging"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Converstion Style Messaging" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <Button
+                android:id="@+id/mediaNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Media Notification" />
+        </LinearLayout>
+</ScrollView>

@@ -3,6 +3,7 @@ package com.lazypotato.workmanager_notifications.notifications
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.graphics.Bitmap
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -37,7 +38,7 @@ class BasicNotification {
         }
     }
 
-    fun show(notificationId:Int, title: String, content: String){
+    fun show(notificationId: Int, title: String, content: String) {
         var builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.notification_icon)
             .setContentTitle(title)
@@ -49,13 +50,33 @@ class BasicNotification {
         }
     }
 
-    fun show(notificationId:Int, title: String, content: String, largeContent: String){
+    fun show(notificationId: Int, title: String, content: String, largeContent: String) {
         var builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.notification_icon)
             .setContentTitle(title)
             .setContentText(content)
-            .setStyle(NotificationCompat.BigTextStyle()
-                .bigText(largeContent))
+            .setStyle(
+                NotificationCompat.BigTextStyle()
+                    .bigText(largeContent)
+            )
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+
+        with(NotificationManagerCompat.from(context)) {
+            notify(notificationId, builder.build())
+        }
+    }
+
+    fun show(notificationId: Int, title: String, content: String, bitmap: Bitmap) {
+        var builder = NotificationCompat.Builder(context, CHANNEL_ID)
+            .setSmallIcon(R.drawable.notification_icon)
+            .setContentTitle(title)
+            .setContentText(content)
+            .setLargeIcon(bitmap)
+            .setStyle(
+                NotificationCompat.BigPictureStyle()
+                    .bigPicture(bitmap)
+                    .bigLargeIcon(null)
+            )
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         with(NotificationManagerCompat.from(context)) {
