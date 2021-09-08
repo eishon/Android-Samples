@@ -153,5 +153,11 @@ class NotificationActivity : AppCompatActivity() {
                     }
                 })
         }
+
+        findViewById<Button>(R.id.callNotification).setOnClickListener {
+            ScheduledNotification(applicationContext).show(
+                1
+            )
+        }
     }
 }

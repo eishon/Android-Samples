@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="workmanager_notifications">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
 
     <application
         android:allowBackup="true"
@@ -31,22 +31,34 @@
             android:name="com.lazypotato.workmanager_notifications.SampleActivity"
             android:exported="true" />
 
-        <receiver android:name="com.lazypotato.workmanager_notifications.receiver.MyBroadcastReceiver"  android:exported="false">
+        <activity
+            android:name="com.lazypotato.workmanager_notifications.CallActivity"
+            android:exported="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_call"/>
+
+        <receiver
+            android:name="com.lazypotato.workmanager_notifications.receiver.MyBroadcastReceiver"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.lazypotato.workmanager_notifications.notifications.tap_action.snooze"/>
+                <action android:name="com.lazypotato.workmanager_notifications.notifications.tap_action.snooze" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.lazypotato.workmanager_notifications.receiver.MediaBroadcastReceiver"  android:exported="false">
+        <receiver
+            android:name="com.lazypotato.workmanager_notifications.receiver.MediaBroadcastReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.lazypotato.workmanager_notifications.receiver.MessageBroadcastReceiver"  android:exported="false">
+        <receiver
+            android:name="com.lazypotato.workmanager_notifications.receiver.MessageBroadcastReceiver"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.lazypotato.workmanager_notifications.notifications.tap_action.message"/>
+                <action android:name="com.lazypotato.workmanager_notifications.notifications.tap_action.message" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
