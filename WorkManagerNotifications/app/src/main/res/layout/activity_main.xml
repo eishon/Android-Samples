@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="16dp"
-    tools:context="com.lazypotato.workmanager_notifications.MainActivity">
+    tools:context="com.lazypotato.workmanager_notifications.ui.MainActivity">
 
 
     <Button

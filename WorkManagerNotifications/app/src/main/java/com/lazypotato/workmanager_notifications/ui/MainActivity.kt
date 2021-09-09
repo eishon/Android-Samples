@@ -1,9 +1,11 @@
-package com.lazypotato.workmanager_notifications
+package com.lazypotato.workmanager_notifications.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.lazypotato.workmanager_notifications.ui.notification.NotificationActivity
+import com.lazypotato.workmanager_notifications.ui.workmanager.WorkManagerActivity
 import workmanager_notifications.R
 
 class MainActivity : AppCompatActivity() {

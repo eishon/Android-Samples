@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 
 import android.app.NotificationManager
-import com.lazypotato.workmanager_notifications.SampleActivity
+import com.lazypotato.workmanager_notifications.ui.notification.SampleActivity
 
 class MyBroadcastReceiver: BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {

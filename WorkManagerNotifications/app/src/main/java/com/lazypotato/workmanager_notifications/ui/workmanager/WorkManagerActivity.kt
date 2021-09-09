@@ -1,4 +1,4 @@
-package com.lazypotato.workmanager_notifications
+package com.lazypotato.workmanager_notifications.ui.workmanager
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

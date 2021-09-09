@@ -1,4 +1,4 @@
-package com.lazypotato.workmanager_notifications
+package com.lazypotato.workmanager_notifications.ui.notification
 
 import android.graphics.Bitmap
 import android.os.Bundle

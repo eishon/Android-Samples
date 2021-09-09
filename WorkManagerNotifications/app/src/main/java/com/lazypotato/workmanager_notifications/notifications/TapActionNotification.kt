@@ -9,7 +9,7 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.lazypotato.workmanager_notifications.receiver.MyBroadcastReceiver
-import com.lazypotato.workmanager_notifications.SampleActivity
+import com.lazypotato.workmanager_notifications.ui.notification.SampleActivity
 import workmanager_notifications.R
 
 class TapActionNotification {

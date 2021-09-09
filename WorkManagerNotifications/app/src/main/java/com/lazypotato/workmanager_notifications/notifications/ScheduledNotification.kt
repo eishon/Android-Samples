@@ -8,7 +8,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.lazypotato.workmanager_notifications.CallActivity
+import com.lazypotato.workmanager_notifications.ui.notification.CallActivity
 import workmanager_notifications.R
 
 class ScheduledNotification {
